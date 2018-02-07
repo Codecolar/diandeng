@@ -13,7 +13,7 @@ from collections import OrderedDict
 
 detected_bulbs = {}
 bulb_idx2ip = {}
-DEBUGGING = False
+DEBUGGING = True
 RUNNING = True
 current_command_id = 0
 MCAST_GRP = '239.255.255.250'
@@ -249,7 +249,7 @@ detection_thread.start()
 # give detection thread some time to collect bulb info
 sleep(0.2)
 # user interaction loop
-#handle_user_input()
+handle_user_input()
 # user interaction end, tell detection thread to quit and wait
 RUNNING = False
 detection_thread.join()
